@@ -1,0 +1,55 @@
+Time:2014-09-21 14:22:38
+Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED
+    at RedisClient.on_error (F:\answer\node_modules\redis\index.js:151:24)
+    at Socket.<anonymous> (F:\answer\node_modules\redis\index.js:86:14)
+    at Socket.EventEmitter.emit (events.js:95:17)
+    at net.js:441:14
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-21 16:17:38
+Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED
+    at RedisClient.on_error (F:\answer\node_modules\redis\index.js:151:24)
+    at Socket.<anonymous> (F:\answer\node_modules\redis\index.js:86:14)
+    at Socket.EventEmitter.emit (events.js:95:17)
+    at net.js:441:14
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-21 21:00:15
+TypeError: Cannot read property 'message' of null
+    at Object.handleException (F:\answer\init.js:140:43)
+    at F:\answer\lib\admin.js:1096:25
+    at F:\answer\lib\mongoClient.js:63:38
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\collection.js:480:9)
+    at g (events.js:180:16)
+    at EventEmitter.emit (events.js:106:17)
+    at Server.Base._callHandler (F:\answer\node_modules\mongodb\lib\mongodb\connection\base.js:130:25)
+    at F:\answer\node_modules\mongodb\lib\mongodb\connection\server.js:522:20
+    at MongoReply.parseBody (F:\answer\node_modules\mongodb\lib\mongodb\responses\mongo_reply.js:132:5)
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\connection\server.js:481:22)
+
+Time:2014-09-21 21:02:15
+TypeError: Cannot read property 'message' of null
+    at Object.handleException (F:\answer\init.js:140:43)
+    at F:\answer\lib\admin.js:1096:25
+    at F:\answer\lib\mongoClient.js:63:38
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\collection.js:480:9)
+    at g (events.js:180:16)
+    at EventEmitter.emit (events.js:106:17)
+    at Server.Base._callHandler (F:\answer\node_modules\mongodb\lib\mongodb\connection\base.js:130:25)
+    at F:\answer\node_modules\mongodb\lib\mongodb\connection\server.js:522:20
+    at MongoReply.parseBody (F:\answer\node_modules\mongodb\lib\mongodb\responses\mongo_reply.js:132:5)
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\connection\server.js:481:22)
+
+Time:2014-09-21 21:04:15
+TypeError: Cannot read property 'message' of null
+    at Object.handleException (F:\answer\init.js:140:43)
+    at F:\answer\lib\admin.js:1096:25
+    at F:\answer\lib\mongoClient.js:63:38
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\collection.js:480:9)
+    at g (events.js:180:16)
+    at EventEmitter.emit (events.js:106:17)
+    at Server.Base._callHandler (F:\answer\node_modules\mongodb\lib\mongodb\connection\base.js:130:25)
+    at F:\answer\node_modules\mongodb\lib\mongodb\connection\server.js:522:20
+    at MongoReply.parseBody (F:\answer\node_modules\mongodb\lib\mongodb\responses\mongo_reply.js:132:5)
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\connection\server.js:481:22)
+

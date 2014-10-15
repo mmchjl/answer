@@ -1,0 +1,235 @@
+﻿<html>
+	<header>
+		<title>Ansay本地模拟请求</title>
+		<script type="text/javascript">
+			function showRequsting(){
+				var display  = getId("lbl_requesting");
+				display.style.display="";
+                getId("txt_answer").value="";
+			}
+			
+			function hideRequesting(){
+				var display  = getId("lbl_requesting");
+				display.style.display="none"
+			}
+			
+			function getId(id){
+				return document.getElementById(id);
+			}
+			
+			function post(){
+				showRequsting();
+				var xhr = new XMLHttpRequest();
+				var counter = 0;
+				var fd = new FormData();
+				fd.append("postString", "发送图片;账号=mmchjl;密码=ansay0246810;题型=1001;文件=c:\\1.jpg;超时秒数=60;QuestionId={72E22CBB-C9D8-4522-B321-5C53CA5FBB33};ImageMd5=2724806E1C2E1BCFFC554818B6BF46E0;dllId={FDF9B0D4-D7C1-4535-ADBC-56C4E6F061CE};FileVersion=14.1.115.2130;MAC=00-23-AE-8B-B4-2F;_opType=SendFile;_操作类型=SendFile");
+				fd.append("postSource","ansay.dll");
+				fd.append("postData",getId("fileToPost").files[0]);
+				xhr.addEventListener("load", uploadComplete, false);
+				xhr.onreadystatechange = function(code,text){
+					if(xhr.status==200&&xhr.readyState==4){
+						console.log("Finish");
+						console.log("The result is :"+xhr.responseText);
+                        var questionNO = xhr.responseText;
+                        if(questionNO&&questionNO.indexOf("Error")==-1){
+                            setTimeout(getAnswer,500,questionNO);
+                        }
+                        getId("txt_questionNo").value = xhr.responseText;
+                        getId("txt_questionNoForError").value = questionNO;
+					}
+				}
+				xhr.open("POST", "http://localhost:8080/ansayServer.aspx");
+				xhr.send(fd);
+				//Host: 121.199.14.46\r\   POST /ansayServer.aspx?272 HTTP/1.0\r\n
+				//setTimeout(hideRequesting,2000)
+			}
+			
+			function uploadComplete(){
+				hideRequesting();
+			}
+
+            function getAnswer(questionNo){
+                var xhr = new XMLHttpRequest();
+                var counter = 0;
+                var fd = new FormData();
+                fd.append("postString", "获取答案;账号=mmchjl;密码=ansay0246810;题型=1001;文件=c:\\1.jpg;超时秒数=60;QuestionId={72E22CBB-C9D8-4522-B321-5C53CA5FBB33};ImageMd5=2724806E1C2E1BCFFC554818B6BF46E0;dllId={FDF9B0D4-D7C1-4535-ADBC-56C4E6F061CE};FileVersion=14.1.115.2130;MAC=00-23-AE-8B-B4-2F;_opType=GetAnswer;QuestionNO="+questionNo);
+                fd.append("postSource","ansay.dll");
+                xhr.onreadystatechange = function(code,text){
+                    if(xhr.status==200&&xhr.readyState==4){
+                        if(xhr.responseText){
+                            getId("txt_answer").value = questionNo+"::"+ xhr.responseText;
+                        }else{
+                            setTimeout(getAnswer, 500, questionNo);
+                        }
+                    }
+                }
+                xhr.open("POST", "http://localhost:8080/ansayServer.aspx");
+                xhr.send(fd);
+            }
+
+            function getCredits(){
+                var postString = "GetCredits;账号=mmchjl;密码=ansay0246810;题型=30001";
+                var lblCredits = getId("lbl_credits");
+                lblCredits.textContent="请求中...."
+                ajax(postString,function(responseText){
+                    lblCredits.textContent = responseText;
+                })
+            }
+
+            function reportError(){
+                var postString = "ReportError;QuestionNo="+getId("txt_questionNoForError").value;
+                var lbl_reportMsg = getId("lbl_reportMsg");
+                lbl_reportMsg.textContent="请求中...."
+                ajax(postString,function(responseText){
+                    lbl_reportMsg.textContent = responseText;
+                })
+            }
+
+            function ajax(postString,cb){
+                var xhr = new XMLHttpRequest();
+                var fd = new FormData();
+                fd.append("postString", postString);
+                fd.append("postSource","ansay.dll");
+                xhr.onreadystatechange = function(code,text){
+                    if(xhr.status==200&&xhr.readyState==4){
+                        if(cb){
+                            cb(xhr.responseText);
+                        }
+                    }
+                }
+                xhr.open("POST", "http://localhost:8080/ansayServer.aspx");
+                xhr.send(fd);
+            }
+
+            function recharge(){
+                var userNo = getId("txt_userNo").value;
+                var cardNo = getId("txt_cardNo").value;
+                if(userNo&&cardNo){
+                    var postString="Recharge;UserNo="+userNo+";CardNo="+cardNo+";"
+                    ajax(postString,function(res){
+                        if(res=="true"){
+                            getCredits();
+                        }else{
+                            alert("充值失败 "+res)
+                        }
+
+                    })
+                }else{
+                    alert("请输入帐号或者卡号");
+                }
+            }
+
+            function registUser(){
+                var obj = {};
+                var userNo = getId("txt_registUserNo").value;
+                var userPwd = getId("txt_registUserPwd").value;
+                var userQQ = getId("txt_registUseQQ").value;
+                var userLimitDays = getId("txt_registUserUseday").value;
+                var parentUserNo = getId("txt_registParentUserNo").value;
+                var parentUserPwd = getId("txt_registParentUserPwd").value;
+                if(userNo){
+                    obj.UserNo = userNo;
+                }
+                if(userPwd){
+                    obj.Password = userPwd;
+                }
+                if(userQQ){
+                    obj.UserQQ = userQQ;
+                }
+                if(userLimitDays){
+                    obj.UserDay = userLimitDays;
+                }
+                if(parentUserNo){
+                    obj.ParentUserNo = parentUserNo;
+                }
+                if(parentUserPwd){
+                    obj.ParentPassword = parentUserPwd;
+                }
+                var postString =createPostString("RegSubUser",obj)
+                getId("lbl_regist").textContent = postString;
+                //return;
+                ajax(postString,function(res){
+                    getId("lbl_regist").textContent = res;
+                })
+            }
+
+            function createPostString(instruction,keyvalueObj){
+                if(instruction){
+                    var result = instruction+";";
+                    keyvalueObj = keyvalueObj||{};
+                    var keys = Object.keys(keyvalueObj)
+                    keys.forEach(function(key){
+                        result+=key+"="+keyvalueObj[key]+";";
+                    })
+                    return result;
+                }
+                return "";
+            }
+
+		</script>
+		<style>
+
+			span{
+				width:100px;
+				text-align:left;
+				display: inline-block;
+			}
+		</style>
+	</header>
+	<body>
+		<div style="padding:5px">
+			<div style="padding:5px;margin-bottom:20px">
+				<fieldset style="padding:5px">
+					<legend>请求内容</legend>
+					<span><label>账号:</label></span><input type="text" id="txt_account" width="100px"/><br/>
+					<span><label>密码:</label></span><input type="text" id="txt_pwd" width="100px"/><br/>
+					<span><label>题型:</label></span><input type="text" id="txt_questType" width="100px"/><br/>
+					<span><label>超时时间:</label></span><input type="text" id="txt_ttl" width="100px"/><br/>
+					<span><label>文件:</label></span><input type="file" id="fileToPost"/><br/>
+					<input type="button" onclick="post()" value="PostAnQuestion"/><label id="lbl_requesting" style="color:red;font-size:12px;display:none">请求处理中......</label>
+				</fieldset>
+			</div>
+			<hr/>
+			<div>
+				<fieldset style="padding:5px">
+					<legend>返回结果</legend>
+					<label>返回题号:</label><input readonly type="text" id="txt_questionNo" width="200px"/><br/>
+					<label>返回答案:</label><input readonly type="text" id="txt_answer" width="200px"/><br/>
+				</fieldset>
+			</div>
+            <div>
+                <fieldset>
+                    <legend>积分查询</legend>
+                    <input type="button" value="我的积分" onclick="getCredits()" width="100px"/><label id="lbl_credits"></label>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>答案报错</legend>
+                    <input type="text" width="100px" id="txt_questionNoForError"/>
+                    <input type="button" value="我要报错" onclick="reportError()" width="100px"/><label id="lbl_reportMsg"></label>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>充值</legend>
+                    <label>卡号:</label><input type="text" width="100px" id="txt_cardNo"/><br/>
+                    <label>帐号:</label><input type="text" width="100px" id="txt_userNo"/><br/>
+                    <input type="button" value="充值" onclick="recharge()" width="100px"/><label id="lbl_recharge"></label>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend>注册用户</legend>
+                    <label>帐号:</label><input type="text" width="100px" id="txt_registUserNo"/><br/>
+                    <label>密码:</label><input type="text" width="100px" id="txt_registUserPwd"/><br/>
+                    <label>QQ号:</label><input type="text" width="100px" id="txt_registUseQQ"/><br/>
+                    <label>使用期限:(天)</label><input type="text" width="100px" id="txt_registUserUseday"/><br/>
+                    <label>父帐号:</label><input type="text" width="100px" id="txt_registParentUserNo"/><br/>
+                    <label>父帐号密码:</label><input type="text" width="100px" id="txt_registParentUserPwd"/><br/>
+                    <input type="button" value="注册用户" onclick="registUser()" width="100px"/><label id="lbl_regist"></label>
+                </fieldset>
+            </div>
+		</div>
+	</body>
+</html>

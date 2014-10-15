@@ -1,0 +1,177 @@
+﻿<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li class="active">
+                    <a ng-href="#/admin">运行情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/questionType">题目类型</a>
+                </li>
+                <li>
+                    <a ng-href="#/user">用户管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/rebate">返利情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/abnormal">答题情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/other">卡号管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/admindeposit">提现管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/home">回到主页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span11 offset1">
+            <div class="row" style="font-size:12px">
+                <!--运行情况
+--运行情况
+	注册Type=1的用户数,Type=2的用户数,Type=3的用户数,Type=4的用户数
+	当前登录
+	今天问题数量，待答队列长度，在答人数
+
+	Md5库数量,今天库答数量,库答积分，库答超时题数，库答错误题数
+
+	服务器情况(uptime,cpu,memory,requestStatistic)
+	
+	图片表情况[文档数,空间,索引]
+	今天超时情况
+	今天报错情况                
+                -->
+                <div class="row">
+                    <table class="table table-condense">
+                        <caption><strong>注册情况</strong></caption>
+                        <tr>
+                            <td>答题者</td>
+                            <td>问题者</td>
+                            <td>问题者子用户</td>
+                            <td>管理员</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{{userRegist.type_1}}</td>
+                            <td>{{userRegist.type_2}}</td>
+                            <td>{{userRegist.type_3}}</td>
+                            <td>{{userRegist.type_4}}</td>
+                            <td><input type="button" class="btn btn-link" ng-click="userRegistRefresh()" value="刷新" /></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!--<div class="row">
+                    <table class="table table-condense">
+                        <caption><strong>在线情况</strong></caption>
+                        <tr>
+                            <td>Type=1的用户数</td>
+                            <td>Type=2的用户数</td>
+                            <td>Type=3的用户数</td>
+                            <td>Type=4的用户数</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{{userOnline.type_1}}</td>
+                            <td>{{userOnline.type_2}}</td>
+                            <td>{{userOnline.type_3}}</td>
+                            <td>{{userOnline.type_4}}</td>
+                            <td><input type="button" class="btn btn-link" ng-click="userOnlineRefresh()" value="刷新" /></td>
+                        </tr>
+                    </table>
+                </div>-->
+
+                <div class="row">
+                    <table class="table table-condense">
+                        <caption>
+                            <strong>MD5库情况</strong>
+                        </caption>
+                        <tr>
+                            <td><strong>收录数</strong></td>
+                            <td><strong>今天库答数量</strong></td>
+                            <td><strong>库答积分</strong></td>
+                            <td><strong>库答超时题数</strong></td>
+                            <td><strong>库答错误题数</strong></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{{md5Stats.size}}</td>
+                            <td>{{md5Stats.answerCount}}</td>
+                            <td>{{md5Stats.answerCredit}}</td>
+                            <td>{{md5Stats.timeOutCount}}</td>
+                            <td>{{md5Stats.errorCount}}</td>
+                            <td><input type="button" class="btn btn-link" value="刷新" ng-click="md5StatsRefresh()" /></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="row">
+                    <table class="table table-condense">
+                        <caption>
+                            <strong>图片表情况</strong>
+                        </caption>
+                        <tr>
+                            <td><strong>文件数</strong>
+                            </td>
+                            <td><strong>空间(GB)</strong>
+                            </td>
+                            <td><strong>files索引</strong>
+                            </td>
+                            <td><strong>chunks索引</strong>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{{imageStats.size}}</td>
+                            <td>{{imageStats.capacity}}</td>
+                            <td>{{imageStats.files}}</td>
+                            <td>{{imageStats.chunks}}</td>
+                            <td><input type="button" class="btn btn-link" value="刷新" ng-click="imageStatsRefresh()" /></td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="row">
+                    <table class="table table-condense">
+                        <caption>
+                            <strong>运行情况</strong>
+                        </caption>
+                        <tr>
+                            <td><strong>问题总量</strong>
+                            </td>
+                            <td><strong>待答队列</strong>
+                            </td>
+                            <td><strong>超时</strong>
+                            </td>
+                            <td><strong>错误</strong>
+                            </td>
+                            <td><strong>其他</strong>
+                            </td>
+                            <td><strong>服务器内存</strong>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>{{runStats.count}}</td>
+                            <td>
+                                <ul style="list-style: none" ng-repeat="item in runStats.list">
+                                    <li>{{item.listName}}:{{item.length}}</li>
+                                </ul>
+                            </td>
+                            <td>{{runStats.timeOutCount}}</td>
+                            <td>{{runStats.errorCount}}</td>
+                            <td>{{runStats.otherError}}</td>
+                            <td>{{runStats.mamoryUsage}}</td>
+                            <td><input type="button" class="btn btn-link" value="刷新" ng-click="runStatsRefresh()" /></td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

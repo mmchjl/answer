@@ -1,0 +1,125 @@
+<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li ng-show="show">
+                    <a ng-href="#/subQuestionUser">子账户管理</a>
+                </li>
+                <li ng-show="show">
+                    <a ng-href="#/subRecharge">卡号管理</a>
+                </li>
+                <li ng-show="show">
+                    <a ng-href="#/subRebate">返利情况</a>
+                </li>
+                <li ng-show="show">
+                    <a ng-href="#/qDeposit">提现管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/chargeRecord">充值记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/recentQuestion">最近问题</a>
+                </li>
+                <li>
+                    <a ng-href="#/historyRecord">历史积分</a>
+                </li>
+                <li class="active">
+                    <a ng-href="#/personProfile">个人设置</a>
+                </li>
+                <li>
+                    <a ng-href="#/index">退出</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span10 offset1">
+            <div class="row tall1"></div>
+            <!--个人信息展示以及修改-->
+            <div class="row">
+                <div class="span5">
+                    <form class="form-horizontal" name="updateForm">
+                        <div class="control-group">
+                            <label class="control-label" >账号</label>
+                            <div class="controls">
+                                <input type="text" ng-model="user.UserNo"  readonly />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <label class="control-label" >姓名</label>
+                            <div class="controls">
+                                <input type="text"  name="UserName" ng-pattern="/^([\u4e00-\u9fa5]{0,4})$/" ng-model="user.UserName" />
+                                <span ng-show="!updateForm.UserName.$valid" class="error">*</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >QQ号</label>
+                            <div class="controls">
+                                <input type="text" name="UserQQ" ng-pattern="/^[1-9][0-9]{5,9}$/" ng-model="user.UserQQ" />
+                                <span ng-show="!updateForm.UserQQ.$valid" class="error">*</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >邮箱</label>
+                            <div class="controls">
+                                <input type="text" ng-pattern="/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/" name="UserEmail" ng-model="user.UserEmail" />
+                                <span ng-show="!updateForm.UserEmail.$valid" class="error">*</span>
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >积分</label>
+                            <div class="controls">
+                                <input type="text" ng-model="user.QuestionCredits" readonly />
+                            </div>
+                        </div>
+
+                        <div class="control-group">
+                            <label class="control-label" >注册时间</label>
+                            <div class="controls">
+                                <input type="text" ng-model="user.RegTime" readonly />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="controls">
+                                <button type="button" ng-disabled="!updateForm.$valid"  class="btn btn-default" ng-click="update('flag')" >提交修改</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="span4 offset1">
+                    <fieldset>
+                        <legend>密码修改</legend>
+                        <form class="form-horizontal">
+                            <div class="control-group">
+                                <label class="control-label" >以前密码</label>
+                                <div class="controls">
+                                    <input type="password" ng-model="prePwd"  />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" >密码</label>
+                                <div class="controls">
+                                    <input type="password" ng-model="updPwd1"  />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label" >确认密码</label>
+                                <div class="controls">
+                                    <input type="password" ng-model="updPwd2"  />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button type="button" ng-click="update()" class="btn btn-default">确认修改</button>
+                                </div>
+                            </div>
+                        </form>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

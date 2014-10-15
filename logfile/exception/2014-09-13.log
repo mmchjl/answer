@@ -1,0 +1,252 @@
+Time:2014-09-13 22:49:49
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:49:49
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:49:52
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:49:52
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:09
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:09
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:12
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:12
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:15
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:15
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:24
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:24
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:30
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:30
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+    at process._tickFromSpinner (node.js:390:15)
+
+Time:2014-09-13 22:50:34
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:34
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+    at process._tickFromSpinner (node.js:390:15)
+
+Time:2014-09-13 22:50:41
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:41
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:43
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:43
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:47
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:47
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:56
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:56
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:59
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:50:59
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:51:03
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 22:51:03
+ReferenceError: object is not defined
+    at gUserTotalSetCredits_ (F:\answer\lib\dataAdapter.js:363:16)
+    at F:\answer\lib\dataAdapter.js:335:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-13 23:50:17
+TypeError: Cannot call method 'trim' of undefined
+    at Object.comLib.getQueryString (F:\answer\lib\comLib.js:18:32)
+    at Object._handler.postQuestion (F:\answer\lib\once.js:17:25)
+    at main (F:\answer\lib\once.js:707:18)
+    at Object._handler.main (F:\answer\handleapp\once.js:25:13)
+    at handleBase.handle (F:\answer\lib\handleAppBase.js:70:45)
+    at Object.handle (F:\answer\handleapp\once.js:17:9)
+    at Object.handle (F:\answer\handler.js:35:27)
+    at header.get (F:\answer\route.js:122:13)
+    at header.EventEmitter.emit (events.js:98:17)
+    at new header (F:\answer\route.js:83:21)
+
+Time:2014-09-13 23:52:21
+Error: Can't render headers after they are sent to the client.
+    at ServerResponse.OutgoingMessage._renderHeaders (http.js:733:11)
+    at ServerResponse.writeHead (http.js:1150:20)
+    at header.get (F:\answer\route.js:126:14)
+    at header.EventEmitter.emit (events.js:98:17)
+    at header.session.getSession.session.getSession.response.setCookie.name (F:\answer\route.js:93:18)
+    at module.exports.operation (F:\answer\lib\sessionStateRedis.js:37:20)
+    at exports.hMSet (F:\answer\lib\redis.js:53:23)
+    at try_callback (F:\answer\node_modules\redis\index.js:532:9)
+    at RedisClient.return_reply (F:\answer\node_modules\redis\index.js:614:13)
+    at ReplyParser.RedisClient.init_parser (F:\answer\node_modules\redis\index.js:266:14)
+

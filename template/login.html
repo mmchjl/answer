@@ -1,0 +1,79 @@
+    <div class=container">
+        <div class="row tall2"></div>
+        <div class="row">
+            <div class="span6 offset4">
+                <tabset>
+                    <tab heading="登录">
+                        <div class="tab-pane">
+                            <ng-form class="form-horizontal" name="loginForm">
+                                <div class="control-group">
+                                    <label class="control-label" for="loginUserId">帐号</label>
+                                    <div class="controls">
+                                        <input type="text" id="loginUserId" name="loginUserId"  ng-model="Login.userId" required placeholder="帐号"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" >密码</label>
+                                    <div class="controls">
+                                        <input type="password" name="loginPwd" ng-keyPress="keyPress($event)" ng-model="Login.pwd" required placeholder="输入密码"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <label class="checkbox">
+                                            <input type="checkbox"> <tt>记住密码</tt>
+                                        </label>
+                                        <button type="button" ng-click="login()" ng-disabled="!loginForm.$valid"  class="btn btn-info width2">登录</button>
+                                    </div>
+                                </div>
+                        </ng-form>
+                        </div>
+                    </tab>
+                    <tab heading="注册">
+                        <div class="tab-pane">
+                            <form class="form-horizontal" name="registerForm">
+                                <div class="control-group">
+                                    <label class="control-label" for="inputEmail2">帐号</label>
+                                    <div class="controls">
+                                        <input type="text" id="inputEmail2" required ng-blur="checkExists();" ng-model="Register.userNo" placeholder="帐号"/>
+                                        <span ng-show="!isLegalUserNo" class="error">帐号已被使用</span>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputPassword2">密码</label>
+                                    <div class="controls">
+                                        <input type="password" id="inputPassword2" required ng-model="Register.userPwd" placeholder="密码"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputPassword">确认密码</label>
+                                    <div class="controls">
+                                        <input type="password" id="inputPassword" required ng-model="Register.userPwd2" placeholder="再次输入密码"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="QQNo">QQ</label>
+                                    <div class="controls">
+                                        <input type="text" id="QQNo" ng-model="Register.QQNo" ng-pattern="/^[1-9][0-9]{5,9}$/"  required placeholder="QQ帐号"/>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" >类型</label>
+                                    <div class="controls">
+                                        <label class="radio" >答题用户<input type="radio" name="UserType" required value="1" ng-model="Register.userType" /></label>
+                                        <label class="radio" >普通用户<input type="radio" name="UserType" required value="2" ng-model="Register.userType" /></label>
+                                        <!--<span>答题用户</span><input type="radio" name="UserType" value="2" ng-model="Register.userType" />-->
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <button type="button" ng-disabled="(!registerForm.$valid)||(!isLegalUserNo)" ng-click="register()" class="btn btn-info width2">注册</button>
+                                    </div>
+                                </div>
+                        </form>
+                        </div>
+                    </tab>
+                </tabset>
+            </div>
+        </div>
+    </div>

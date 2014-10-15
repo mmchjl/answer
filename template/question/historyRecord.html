@@ -1,0 +1,115 @@
+<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li ng-show="show">
+                    <a ng-href="#/subQuestionUser">子账户管理</a>
+                </li>
+                <li ng-show="show">
+                    <a ng-href="#/subRecharge">卡号管理</a>
+                </li>
+                <li ng-show="show">
+                    <a ng-href="#/subRebate">返利情况</a>
+                </li>
+                <li ng-show="show">
+                    <a ng-href="#/qDeposit">提现管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/chargeRecord">充值记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/recentQuestion">最近问题</a>
+                </li>
+                <li class="active">
+                    <a ng-href="#/historyRecord">历史积分</a>
+                </li>
+                <li>
+                    <a ng-href="#/personProfile">个人设置</a>
+                </li>
+                <li>
+                    <a ng-href="#/index">退出</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span12 offset1">
+            <div class="row tall1">
+                <!--<p>条件搜索</p>
+                <form class="form-inline">-->
+                    <!--<label class="control-label offset1">审核</label>-->
+                    <!--<select class="span1" ng-model="searcher.userAudit">-->
+                        <!--<option value=""></option>-->
+                        <!--<option value="true">通过</option>-->
+                        <!--<option value="false">未通过</option></select>-->
+                    <!--<label class="checkbox offset1">-->
+                        <!--管理员<input ng-disabled="searcher.userType!=1" type="checkbox" ng-model="searcher.isSubAdmin"/>-->
+                    <!--</label>-->
+                <!--</form>-->
+                <!--<input type="button" value="搜索" class="btn btn-info span2 offset1" ng-click="search()"/>-->
+                <p style="float:right;line-height:25px;font-size: 12px;margin-right:100px">共{{recordSize}}条记录</p>
+            </div>
+                <div class="row">
+                    <table class="table table-condense table-hover" style="text-align:center">
+                        <thead>
+                        <tr>
+                            <th>日期</th>
+                            <th>总题数</th>
+                            <th>总积分</th>
+                            <th>错误题数</th>
+                            <th>错误积分</th>
+                            <th>超时题数</th>
+                            <th>超时积分</th>
+                            <th>不确定题数</th>
+                            <th>汇总积分</th>
+                            <!--<th>报酬(元)</th>
+                            <th>支付状态</th>-->
+                        </tr>
+                        </thead>
+                        <tbody ng-repeat="record in creditRecords">
+                        <tr>
+                            <td>{{record.QuestionDate| date:'yyyy年MM月dd日'}}</td>
+                            <td>{{record.QuestionCount}}</td>
+                            <td>{{record.QuestionCredits}}</td>
+                            <td>{{record.ReportErrorCount}}</td>
+                            <td>{{record.ReportErrorCredits}}</td>
+                            <td>{{record.TimeOutCount}}</td>
+                            <td>{{record.TimeOutCredits}}</td>
+                            <td>{{record.NotSureCount}}</td>
+                            <td>{{record.sumCredit}}</td>
+                            <!--<td>{{record.payAmount}}</td>
+                            <td>已支付</td>-->
+                        </tr>
+                        </tbody>
+                        <tfoot>
+                        <tr>
+                            <th>-</th>
+                            <th>{{synopsis.sumQuestionCount}}</th>
+                            <th>{{synopsis.sumQuestionCredits}}</th>
+                            <th>{{synopsis.sumReportErrorCount}}</th>
+                            <th>{{synopsis.sumReportErrorCredits}}</th>
+                            <th>{{synopsis.sumTimeOutCount}}</th>
+                            <th>{{synopsis.sumTimeOutCredits}}</th>
+                            <th>{{synopsis.sumNotSureCount}}</th>
+                            <th>{{synopsis.sumCredit}}</th>
+                            <!--<th>{{synopsis.payAmount}}</th>
+                            <th>-</th>-->
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div class="pagination">
+                        <ul>
+                            <li ng-show="page.pre"><a href="javascript:void(0)" ng-click="pageTo(-1)">Prev</a></li>
+                            <li ng-show="page.one" ng-class="{active:page.oneS}"><a href="javascript:void(0)" ng-click="pageTo(page.one)">{{page.one}}</a></li>
+                            <li ng-show="page.two" ng-class="{active:page.twoS}"><a href="javascript:void(0)" ng-click="pageTo(page.two)">{{page.two}}</a></li>
+                            <li ng-show="page.thr" ng-class="{active:page.thrS}"><a href="javascript:void(0)" ng-click="pageTo(page.thr)">{{page.thr}}</a></li>
+                            <li ng-show="page.fou" ng-class="{active:page.fouS}"><a href="javascript:void(0)" ng-click="pageTo(page.fou)">{{page.fou}}</a></li>
+                            <li ng-show="page.fiv" ng-class="{active:page.fivS}"><a href="javascript:void(0)" ng-click="pageTo(page.fiv)">{{page.fiv}}</a></li>
+                            <li ng-show="page.nex"><a href="javascript:void(0)"  ng-click="pageTo(0)">Next</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+        </div>
+    </div>
+</div>
+

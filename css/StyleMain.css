@@ -1,0 +1,43 @@
+﻿.tall1{
+    height: 50px;
+}
+
+.tall2{
+    height: 100px;
+}
+
+.tall3{
+    height: 150px;
+}
+
+.tall4{
+    height: 200px;
+}
+
+.tall5{
+    height: 250px;
+}
+
+.width1{
+    width:50px;
+}
+
+.width2{
+    width:100px;
+}
+
+.width3{
+    width:150px;
+}
+
+.cdl dt{
+    width: 130px;
+}
+
+.cdl dd{
+    margin-left: 140px;
+}
+
+.error{
+    color:red;
+}

@@ -1,0 +1,10 @@
+Time:2014-09-23 23:36:21
+SyntaxError: Unexpected token o
+    at Object.parse (native)
+    at _handler.getCredit.async.waterfall.result (F:\answer\lib\once.js:362:52)
+    at bindObj (F:\answer\lib\dataAdapter.js:154:9)
+    at bindObj (F:\answer\lib\dataAdapter.js:149:17)
+    at async.iterator.fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at async.waterfall.wrapIterator (F:\answer\node_modules\async\lib\async.js:441:34)
+    at process._tickCallback (node.js:415:13)
+

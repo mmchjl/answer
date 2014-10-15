@@ -1,0 +1,101 @@
+﻿<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li>
+                    <a ng-href="#/admin">运行情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/questionType">题目类型</a>
+                </li>
+                <li>
+                    <a ng-href="#/user">用户管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/rebate">返利情况</a>
+                </li>
+                <li  class="active">
+                    <a ng-href="#/abnormal">答题情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/other">卡号管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/admindeposit">提现管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/home">回到主页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span11 offset1">
+            <div class="row tall3">
+                <p>条件搜索</p>
+                <form class="form-inline">
+                    <label class="control-label">问题者</label>
+                    <input type="text" class="span2" ng-model="searcher.questionerId"/>
+
+                    <label class="control-label offset0">回答者</label>
+                    <input type="text" class="span2" ng-model="searcher.answerId"/>
+
+                    <label class="control-label offset0">状态</label>
+                    <select class="span2" ng-model="searcher.status">
+                        <option value=""></option>
+                        <option value="0">Waiting</option>
+                        <option value="-1">Unknown</option>
+                        <option value="-2">TimeOut</option>
+                        <option value="-3">Error</option>
+                        <option value="-4">Answering</option></select>
+
+                    <label class="control-label offset0">时间</label>
+                    <input type="text" class="span2" ng-model="searcher.dateTime"/>
+                </form>
+                <input type="button" value="搜索" class="btn btn-info span2 offset1" ng-click="search()"/>
+                <p style="float:right;line-height:25px;font-size: 12px;margin-right:100px">共{{recordSize}}条记录</p>
+            </div>
+            <div class="row" style="font-size:12px">
+                <!--题目类型 -->
+                <table class="table table-condense">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>提问者</th>
+                        <th>回答者</th>
+                        <th>时间</th>
+                        <th>状态</th>
+                        <th>问题</th>
+                        <th>答案</th>
+                        <th>题目类型</th>
+                        <th>题目图片</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-repeat="record in records">
+                    <tr>
+                        <td>{{record.QuestionNO}}</td>
+                        <td>{{record.QuesterId}}</td>
+                        <td>{{record.AnswererId}}</td>
+                        <td>{{record.QuestionDate|date:'yyyy/MM/dd HH:mm:ss'}}</td>
+                        <td>{{getStatus(record.Status)}}</td>
+                        <td>{{record.Remark}}</td>
+                        <td>{{record.sAnswer}}</td>
+                        <td>{{record.gItemNo}}</td>
+                        <td><a target="_blank" ng-href="/file/getimg?imgid={{record.imgId}}">图片</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <li ng-show="page.pre"><a href="javascript:void(0)" ng-click="pageTo(-1)">Prev</a></li>
+                        <li ng-show="page.one" ng-class="{active:page.oneS}"><a href="javascript:void(0)" ng-click="pageTo(page.one)">{{page.one}}</a></li>
+                        <li ng-show="page.two" ng-class="{active:page.twoS}"><a href="javascript:void(0)" ng-click="pageTo(page.two)">{{page.two}}</a></li>
+                        <li ng-show="page.thr" ng-class="{active:page.thrS}"><a href="javascript:void(0)" ng-click="pageTo(page.thr)">{{page.thr}}</a></li>
+                        <li ng-show="page.fou" ng-class="{active:page.fouS}"><a href="javascript:void(0)" ng-click="pageTo(page.fou)">{{page.fou}}</a></li>
+                        <li ng-show="page.fiv" ng-class="{active:page.fivS}"><a href="javascript:void(0)" ng-click="pageTo(page.fiv)">{{page.fiv}}</a></li>
+                        <li ng-show="page.nex"><a href="javascript:void(0)"  ng-click="pageTo(0)">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

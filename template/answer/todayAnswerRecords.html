@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li>
+                    <a ng-href="#/answer">答题</a>
+                </li>
+                <li>
+                    <a ng-href="#/recentAnswerRecords">最近答题记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/recentCreditRecords">历史积分记录</a>
+                </li>
+                <li class="active">
+                    <a ng-href="#/todayAnswerRecords">今天记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/deposit">提现记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/answerProfiles">个人设置</a>
+                </li>
+                <li ng-show="isShow">
+                    <a ng-href="#/subUser">用户管理</a>
+                </li>
+                <li ng-show="isShow">
+                    <a ng-href="#/subAbnormal">异常情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/home">回到主页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span10 offset1">
+            <div class="row">
+                    <dl class="dl-horizontal cdl">
+                        <dt>今天已回答:</dt><dd><strong>{{QuestionCount}}</strong>题</dd>
+                        <dt>总积分:</dt><dd><strong>{{QuestionCredits}}</strong>分</dd>
+                        <dt>超时题数:</dt><dd><strong>{{TimeOutCount}}</strong>题</dd>
+                        <dt>超时扣分:</dt><dd><strong>{{TimeOutCredits}}</strong>分</dd>
+                        <dt>报错题数:</dt><dd><strong>{{ReportErrorCount}}</strong>题</dd>
+                        <dt>报错扣分:</dt><dd><strong>{{ReportErrorCredits}}</strong>分</dd>
+                        <dt>不确定答案题数:</dt><dd><strong>{{NotSureCount}}</strong>题</dd>
+                        <dt>所得积分:</dt><dd><strong>{{sumCredit}}</strong>分</dd>
+                        <!--<dt>结余报酬:</dt><dd><strong>{{payAmount}}</strong>元</dd>-->
+                    </dl>
+            </div>
+        </div>
+    </div>
+</div>

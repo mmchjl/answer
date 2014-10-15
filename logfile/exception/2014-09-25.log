@@ -1,0 +1,43 @@
+Time:2014-09-25 19:30:44
+Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED
+    at RedisClient.on_error (F:\answer\node_modules\redis\index.js:151:24)
+    at Socket.<anonymous> (F:\answer\node_modules\redis\index.js:86:14)
+    at Socket.EventEmitter.emit (events.js:95:17)
+    at net.js:441:14
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-25 20:18:22
+TypeError: Object [] has no method 'push'
+    at F:\answer\lib\once.js:320:65
+    at F:\answer\lib\dataAdapter.js:160:9
+    at F:\answer\lib\dataAdapter.js:155:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-25 20:24:23
+TypeError: Object 1 has no method 'Find'
+    at F:\answer\lib\once.js:133:56
+    at F:\answer\lib\dataAdapter.js:160:9
+    at F:\answer\lib\dataAdapter.js:151:21
+    at F:\answer\lib\redis.js:53:23
+    at try_callback (F:\answer\node_modules\redis\index.js:532:9)
+    at RedisClient.return_reply (F:\answer\node_modules\redis\index.js:614:13)
+    at ReplyParser.<anonymous> (F:\answer\node_modules\redis\index.js:266:14)
+    at ReplyParser.EventEmitter.emit (events.js:95:17)
+    at ReplyParser.send_reply (F:\answer\node_modules\redis\lib\parser\javascript.js:300:10)
+    at ReplyParser.execute (F:\answer\node_modules\redis\lib\parser\javascript.js:173:22)
+
+Time:2014-09-25 20:27:26
+TypeError: Object 1 has no method 'Find'
+    at F:\answer\lib\once.js:135:56
+    at F:\answer\lib\dataAdapter.js:160:9
+    at F:\answer\lib\dataAdapter.js:151:21
+    at F:\answer\lib\redis.js:53:23
+    at try_callback (F:\answer\node_modules\redis\index.js:532:9)
+    at RedisClient.return_reply (F:\answer\node_modules\redis\index.js:614:13)
+    at ReplyParser.<anonymous> (F:\answer\node_modules\redis\index.js:266:14)
+    at ReplyParser.EventEmitter.emit (events.js:95:17)
+    at ReplyParser.send_reply (F:\answer\node_modules\redis\lib\parser\javascript.js:300:10)
+    at ReplyParser.execute (F:\answer\node_modules\redis\lib\parser\javascript.js:173:22)
+

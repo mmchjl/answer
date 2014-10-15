@@ -1,0 +1,62 @@
+Time:2014-09-17 21:41:14
+Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED
+    at RedisClient.on_error (F:\answer\node_modules\redis\index.js:151:24)
+    at Socket.<anonymous> (F:\answer\node_modules\redis\index.js:86:14)
+    at Socket.EventEmitter.emit (events.js:95:17)
+    at net.js:441:14
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-17 22:51:54
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:175:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-17 22:52:13
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:175:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-17 22:52:14
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:175:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-17 22:52:14
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:175:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-17 22:52:14
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:175:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-17 22:52:14
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:175:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+

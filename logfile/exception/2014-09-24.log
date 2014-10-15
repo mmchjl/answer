@@ -1,0 +1,91 @@
+Time:2014-09-24 20:50:59
+TypeError: Cannot call method 'toString' of null
+    at F:\answer\lib\answer.js:122:73
+    at F:\answer\lib\answer.js:108:25
+    at F:\answer\node_modules\mongodb\lib\mongodb\gridfs\grid.js:78:20
+    at error (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:278:5)
+    at F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:203:20
+    at F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:35
+    at Cursor.close (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:939:5)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:17)
+    at commandHandler (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:635:14)
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\db.js:1709:18)
+
+Time:2014-09-24 20:51:34
+TypeError: Cannot call method 'toString' of null
+    at F:\answer\lib\answer.js:122:73
+    at F:\answer\lib\answer.js:108:25
+    at F:\answer\node_modules\mongodb\lib\mongodb\gridfs\grid.js:78:20
+    at error (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:278:5)
+    at F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:203:20
+    at F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:35
+    at Cursor.close (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:939:5)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:17)
+    at commandHandler (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:635:14)
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\db.js:1709:18)
+
+Time:2014-09-24 20:51:58
+TypeError: Cannot call method 'toString' of null
+    at F:\answer\lib\answer.js:122:73
+    at F:\answer\lib\answer.js:108:25
+    at F:\answer\node_modules\mongodb\lib\mongodb\gridfs\grid.js:78:20
+    at error (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:278:5)
+    at F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:203:20
+    at F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:35
+    at Cursor.close (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:939:5)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:17)
+    at commandHandler (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:635:14)
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\db.js:1709:18)
+
+Time:2014-09-24 21:04:15
+TypeError: Cannot call method 'toString' of null
+    at F:\answer\lib\answer.js:122:73
+    at F:\answer\lib\answer.js:108:25
+    at F:\answer\node_modules\mongodb\lib\mongodb\gridfs\grid.js:78:20
+    at error (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:278:5)
+    at F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:203:20
+    at F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:35
+    at Cursor.close (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:939:5)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:17)
+    at commandHandler (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:635:14)
+    at null.<anonymous> (F:\answer\node_modules\mongodb\lib\mongodb\db.js:1709:18)
+
+Time:2014-09-24 21:07:41
+TypeError: Cannot call method 'toString' of null
+    at _handler.getQuestion (F:\answer\lib\answer.js:122:73)
+    at _handler.getQuestion.async.waterfall.response.endJson.error (F:\answer\lib\answer.js:108:25)
+    at Grid.get (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\grid.js:78:20)
+    at error (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:278:5)
+    at self.collection.self.fileId (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:203:20)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:35)
+    at Cursor.close (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:939:5)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:17)
+    at Cursor.nextObject.commandHandler (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:635:14)
+    at Db._executeQueryCommand (F:\answer\node_modules\mongodb\lib\mongodb\db.js:1709:18)
+
+Time:2014-09-24 21:10:22
+TypeError: Cannot call method 'toString' of null
+    at _handler.getQuestion (F:\answer\lib\answer.js:122:73)
+    at _handler.getQuestion.async.waterfall.response.endJson.error (F:\answer\lib\answer.js:108:25)
+    at Grid.get (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\grid.js:78:20)
+    at error (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:278:5)
+    at self.collection.self.fileId (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:203:20)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:35)
+    at Cursor.close (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:939:5)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:17)
+    at Cursor.nextObject.commandHandler (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:635:14)
+    at Db._executeQueryCommand (F:\answer\node_modules\mongodb\lib\mongodb\db.js:1709:18)
+
+Time:2014-09-24 21:16:31
+TypeError: Cannot call method 'toString' of null
+    at _handler.getQuestion (F:\answer\lib\answer.js:122:73)
+    at _handler.getQuestion.async.waterfall.response.endJson.error (F:\answer\lib\answer.js:108:25)
+    at Grid.get (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\grid.js:78:20)
+    at error (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:278:5)
+    at self.collection.self.fileId (F:\answer\node_modules\mongodb\lib\mongodb\gridfs\gridstore.js:203:20)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:35)
+    at Cursor.close (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:939:5)
+    at Cursor.nextObject (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:658:17)
+    at Cursor.nextObject.commandHandler (F:\answer\node_modules\mongodb\lib\mongodb\cursor.js:635:14)
+    at Db._executeQueryCommand (F:\answer\node_modules\mongodb\lib\mongodb\db.js:1709:18)
+

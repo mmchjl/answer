@@ -1,0 +1,77 @@
+<div class="container-fluid" ng-keypress="keyPress($event)">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li class="active">
+                    <a ng-href="#/answer">答题</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" ng-click="skip('#/recentAnswerRecords')">最近答题记录</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" ng-click="skip('#/recentCreditRecords')">历史积分记录</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" ng-click="skip('#/todayAnswerRecords')">今天记录</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" ng-click="skip('#/deposit')">提现记录</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" ng-click="skip('#/answerProfiles')">个人设置</a>
+                </li>
+                <li ng-show="isShow">
+                    <a href="javascript:void(0)" ng-click="skip('#/subUser')">用户管理</a>
+                </li>
+                <li ng-show="isShow">
+                    <a href="javascript:void(0)" ng-click="skip('#/subAbnormal')">异常情况</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0)" ng-click="skip('#/home')">回到主页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span10 offset1">
+                <div class="row">
+                    <div class="row">
+                        <div class="span4">
+                            <div class="row">
+                                <div>
+                                    <input type="button" ng-disabled="isOn" class="btn-small" ng-click="fetchQuestion()" value="开始答题"/>
+                                    <input type="button" class="btn-small" ng-click="pause()" value="停止答题"/>
+                                </div>
+                            </div>
+                            <div class="row" style="height: 25px"></div>
+                        </div>
+                        <div class="span6 hero-unit">
+                            <div>
+                                <span style="font-size: 12px">题目详细:</span> <span style="color: red;font-size: 12px">{{currentQuestion.Remark}}</span>
+                            </div>
+                            <div>
+                                <span style="font-size: 12px">问题编号:</span><span style="color: red;font-size: 12px">{{currentQuestion.QuestionNO}}</span>
+                            </div>
+                            <div>
+                                <span style="font-size: 12px">问题时间:</span><span style="color: red;font-size: 12px">{{currentQuestion.QuestionDateSpan}}</span>
+                                <span style="font-size: 12px;margin-left:200px">剩余时间:</span><span style="color: red;font-size: 12px" id="leftTimeSpan" ng-bind="currentLeftTime" ></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="input-append">
+                                <input class="span3" id="appendedInputButton"  ng-model="answerTxt" type="text"/>
+                                <button class="btn btn-default btn-info" ng-click="putAnswer()" ng-disabled="!answerTxt.length>0" type="button">提交答案</button>
+                            <button class="btn btn-default btn-info" style="margin-left:20px" ng-click="putAnswer('unknown')" type="button">无法回答</button>
+                            </div>
+                        <hr style="margin: 0px;border: 1px solid #000000"/> 
+                    </div>
+                    <div class="row">
+                        <span style="font-size: 12px;color: darkred">题目图片↓</span><br/>
+                        <img src="" style="display: none"   id="imgQuestionShow" alt=""/>
+                        <canvas id="imgCanvas" ng-click="setImagePoint($event)"></canvas>
+                    </div>
+
+                </div>
+        </div>
+    </div>
+</div>

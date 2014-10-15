@@ -1,0 +1,87 @@
+<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li>
+                    <a ng-href="#/answer">答题</a>
+                </li>
+                <li class="active">
+                    <a ng-href="#/recentAnswerRecords">最近答题记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/recentCreditRecords">历史积分记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/todayAnswerRecords">今天记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/deposit">提现记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/answerProfiles">个人设置</a>
+                </li>
+                <li ng-show="isShow">
+                    <a ng-href="#/subUser">用户管理</a>
+                </li>
+                <li ng-show="isShow">
+                    <a ng-href="#/subAbnormal">异常情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/home">回到主页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span11 offset1">
+            <div class="row">
+                <!--最近几分钟的答题记录[题号,状态,回答者,提问时间,答题时间,耗时(秒),答案,消耗积分,答题积分,题目类型,图片]-->
+                <p style="float:right;line-height:25px;font-size: 12px;margin-right:100px">共{{recordSize}}条记录</p>
+                <table class="table table-condense table-hover">
+                    <thead>
+                        <tr>
+                            <th>题号</th>
+                            <th>状态</th>
+                            <th>回答者</th>
+                            <th>提问时间</th>
+                            <th>答题时间</th>
+                            <!--<th>耗时(秒)</th>-->
+                            <th>答案</th>
+                            <!--<th>消耗积分</th>-->
+                            <th>答题积分</th>
+                            <th>题目类型</th>
+                            <th>图片</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="record in records">
+                            <td>{{record.QuestionNO}}</td>
+                            <td>{{getStatuDesc(record.Status)}}</td>
+                            <td>{{record.AnswererId}}</td>
+                            <td>{{record.QuestionDate|date:'MM/dd HH:mm:ss'}}</td>
+                            <td>{{record.AnswerDate|date:'MM/dd HH:mm:ss'}}</td>
+                            <!--<td>{{record.TakeTime}}秒</td>-->
+                            <td>{{record.sAnswer}}</td>
+                            <!--<td>{{record.TakeCredits}}</td>-->
+                            <td>{{record.AnswerCredits}}</td>
+                            <td>{{record.gItemNo}}</td>
+                            <td>
+                                <a ng-href="./file/getimg?imgid={{record.imgId}}" target="_blank">查看</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <li ng-show="page.pre"><a href="javascript:void(0)" ng-click="pageTo(-1)">Prev</a></li>
+                        <li ng-show="page.one" ng-class="{active:page.oneS}"><a href="javascript:void(0)" ng-click="pageTo(page.one)">{{page.one}}</a></li>
+                        <li ng-show="page.two" ng-class="{active:page.twoS}"><a href="javascript:void(0)" ng-click="pageTo(page.two)">{{page.two}}</a></li>
+                        <li ng-show="page.thr" ng-class="{active:page.thrS}"><a href="javascript:void(0)" ng-click="pageTo(page.thr)">{{page.thr}}</a></li>
+                        <li ng-show="page.fou" ng-class="{active:page.fouS}"><a href="javascript:void(0)" ng-click="pageTo(page.fou)">{{page.fou}}</a></li>
+                        <li ng-show="page.fiv" ng-class="{active:page.fivS}"><a href="javascript:void(0)" ng-click="pageTo(page.fiv)">{{page.fiv}}</a></li>
+                        <li ng-show="page.nex"><a href="javascript:void(0)"  ng-click="pageTo(0)">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

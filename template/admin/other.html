@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li>
+                    <a ng-href="#/admin">运行情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/questionType">题目类型</a>
+                </li>
+                <li>
+                    <a ng-href="#/user">用户管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/rebate">返利情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/abnormal">答题情况</a>
+                </li>
+                <li class="active">
+                    <a ng-href="#/other">卡号管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/admindeposit">提现管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/home">回到主页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span11 offset1">
+            <div class="row" style="font-size:12px">
+                <!--其他操作 -->
+                <div class="row">
+                    <form class="form-inline">
+                        <label class="control-label">面值</label>
+                        <input type="text" class="span2" ng-model="cardPrice"/>
+                        <input type="button" ng-click="generateCard()" value="生成卡号"/>
+                        <label class="control-label">{{CardNo||""}}</label>
+                    </form>
+                </div>
+                <div class="row">
+                    <form class="form-inline">
+                        <label class="control-label">帐号</label>
+                        <input type="text" class="span2" ng-model="userNo"/>
+                        <label class="control-label">卡号</label>
+                        <input type="text" class="span4" ng-model="cardNo"/>
+                        <input type="button" ng-click="reCharge()" value="充值"/>
+                    </form>
+                    归属人<input type="text" ng-model="searcher.Alipay" class="span2"/>
+                    是否已用<select ng-model="searcher.Auditing" class="span2">
+                    <option value=""></option>
+                    <option value="true">已用</option>
+                    <option value="false">未用</option>
+                    </select>
+                    <input type="button" ng-click="search()" class="offset1" style="width: 70px" value="搜索"/>
+                    <p style="float:right;line-height:25px;font-size: 12px;margin-right:100px">共{{recordSize}}条记录</p>
+
+                </div>
+                <table class="table table-condense">
+                    <thead>
+                    <tr>
+                        <th>生成时间</th>
+                        <th>面值</th>
+                        <th>卡号</th>
+                        <th>归属人</th>
+                        <th>是否已用</th>
+                        <th>充值用户</th>
+                        <th>充值时间</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-repeat="record in records">
+                    <tr>
+                        <td>{{record.AddTime|date:'yyyy/MM/dd HH:mm'}}</td>
+                        <td>{{record.CardPrice}}</td>
+                        <td  ng-class="{error:record.Auditing}">{{record.CardNo}}</td>
+                        <td>{{record.Alipay}}</td>
+                        <td>{{record.Auditing?"是":"否"}}</td>
+                        <td>{{record.CardUser}}</td>
+                        <td>{{record.CardTime?record.CardTime:""|date:'yyyy/MM/dd HH:mm'}}</td>
+                        <td>
+                            <input type="button" class="btn-small btn-link" ng-click="remove(record._id)" ng-show="record.Alipay=='Ansay'" value="删除"/>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <li ng-show="page.pre"><a href="javascript:void(0)" ng-click="pageTo(-1)">Prev</a></li>
+                        <li ng-show="page.one" ng-class="{active:page.oneS}"><a href="javascript:void(0)" ng-click="pageTo(page.one)">{{page.one}}</a></li>
+                        <li ng-show="page.two" ng-class="{active:page.twoS}"><a href="javascript:void(0)" ng-click="pageTo(page.two)">{{page.two}}</a></li>
+                        <li ng-show="page.thr" ng-class="{active:page.thrS}"><a href="javascript:void(0)" ng-click="pageTo(page.thr)">{{page.thr}}</a></li>
+                        <li ng-show="page.fou" ng-class="{active:page.fouS}"><a href="javascript:void(0)" ng-click="pageTo(page.fou)">{{page.fou}}</a></li>
+                        <li ng-show="page.fiv" ng-class="{active:page.fivS}"><a href="javascript:void(0)" ng-click="pageTo(page.fiv)">{{page.fiv}}</a></li>
+                        <li ng-show="page.nex"><a href="javascript:void(0)"  ng-click="pageTo(0)">Next</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

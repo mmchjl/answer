@@ -1,0 +1,8 @@
+Time:2014-09-27 20:18:11
+Error: Redis connection to 127.0.0.1:6379 failed - connect ECONNREFUSED
+    at RedisClient.on_error (F:\answer\node_modules\redis\index.js:151:24)
+    at Socket.<anonymous> (F:\answer\node_modules\redis\index.js:86:14)
+    at Socket.EventEmitter.emit (events.js:95:17)
+    at net.js:441:14
+    at process._tickCallback (node.js:415:13)
+

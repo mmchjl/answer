@@ -1,0 +1,131 @@
+<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li>
+                    <a ng-href="#/answer">答题</a>
+                </li>
+                <li>
+                    <a ng-href="#/recentAnswerRecords">最近答题记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/recentCreditRecords">历史积分记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/todayAnswerRecords">今天记录</a>
+                </li>
+                <li class="active">
+                    <a ng-href="#/deposit">提现记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/answerProfiles">个人设置</a>
+                </li>
+                <li ng-show="isShow" >
+                    <a ng-href="#/subUser">用户管理</a>
+                </li>
+                <li ng-show="isShow">
+                    <a ng-href="#/subAbnormal">异常情况</a>
+                </li>
+                <li>
+                    <a ng-href="#/home">回到主页</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span12 offset1">
+            <div class="row tall3">
+                <form ng-show="showFlag" class="form-inline">
+                    <label class="control-label">淘宝流水号</label>
+                    <input type="text" class="span3" required ng-model="creditNo"/>
+                    <label class="control-label offset1">提现金额</label>
+                    <input type="text" class="span1" required  ng-model="cash"/>
+                    <label class="control-label offset1">留言</label>
+                    <input type="text" class="span3" required  ng-model="remark"/>
+                    <input type="submit" value="确定" class="btn btn-info span1 offset1" ng-click="deposit()"/>
+                </form>
+                <input type="button" value="我要提现" class="btn btn-info span2 offset1" ng-click="showPanel()"/>
+                <p style="float:right;line-height:25px;font-size: 12px;margin-right:100px">共{{recordSize}}条记录</p>
+                <p style="float:right;line-height:25px;font-size: 12px;margin-right:300px">你当前积分:{{credits}}</p>
+            </div>
+            <div class="row" style="font-size:12px">
+                <!--题目类型 -->
+                <table class="table table-condense">
+                    <thead>
+                    <tr>
+                        <th>用户</th>
+                        <th>昵称</th>
+                        <th>提现号</th>
+                        <th>提现金额</th>
+                        <th>处理状态</th>
+                        <th>Remark</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-repeat="record in records">
+                    <tr>
+                        <td>{{record.UserNo}}</td>
+                        <td>{{record.CreateTime|date:'yyyy/MM/dd'}}</td>
+                        <td>{{record.CreditNo}}</td>
+                        <td>{{record.Cash}}</td>
+                        <td>{{record.IsFinish?"已完成":"处理中"}}</td>
+                        <td title="{{record.Remark}}">{{(record.Remark||"").substr(0,5)}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <li ng-show="page.pre"><a href="javascript:void(0)" ng-click="pageTo(-1)">Prev</a></li>
+                        <li ng-show="page.one" ng-class="{active:page.oneS}"><a href="javascript:void(0)" ng-click="pageTo(page.one)">{{page.one}}</a></li>
+                        <li ng-show="page.two" ng-class="{active:page.twoS}"><a href="javascript:void(0)" ng-click="pageTo(page.two)">{{page.two}}</a></li>
+                        <li ng-show="page.thr" ng-class="{active:page.thrS}"><a href="javascript:void(0)" ng-click="pageTo(page.thr)">{{page.thr}}</a></li>
+                        <li ng-show="page.fou" ng-class="{active:page.fouS}"><a href="javascript:void(0)" ng-click="pageTo(page.fou)">{{page.fou}}</a></li>
+                        <li ng-show="page.fiv" ng-class="{active:page.fivS}"><a href="javascript:void(0)" ng-click="pageTo(page.fiv)">{{page.fiv}}</a></li>
+                        <li ng-show="page.nex"><a href="javascript:void(0)"  ng-click="pageTo(0)">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/ng-template" id="mySubUserModalContent.html">
+    <div class="modal-header">
+        <h3 class="modal-title">I'm a modal!</h3>
+    </div>
+    <div class="modal-body">
+        <form class="form-horizontal">
+            <div class="control-group">
+                <label class="control-label">帐号</label>
+                <div class="controls">
+                    <input type="text" readonly ng-model="questionType.UserNo"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">名字</label>
+                <div class="controls">
+                    <input type="text" ng-model="questionType.UserName"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">专答类型</label>
+                <div class="controls">
+                    <input type="text" ng-model="questionType.gItemTypeIn"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">QQ号</label>
+                <div class="controls">
+                    <input type="text" ng-model="questionType.UserQQ"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label">Remark</label>
+                <div class="controls">
+                    <textarea ng-model="questionType.Remark"></textarea>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-primary" ng-click="ok()">OK</button>
+        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+    </div>
+</script>

@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <div class="row tall1"></div>
+    <div class="row">
+        <div class="span2">
+            <ul class="nav nav-list">
+                <li ng-show="show">
+                    <a ng-href="#/subQuestionUser">子账户管理</a>
+                </li>
+                <li class="active" ng-show="show">
+                    <a ng-href="#/subRecharge">卡号管理</a>
+                </li>
+                <li ng-show="show">
+                    <a ng-href="#/subRebate">返利情况</a>
+                </li>
+                <li ng-show="show">
+                    <a ng-href="#/qDeposit">提现管理</a>
+                </li>
+                <li>
+                    <a ng-href="#/chargeRecord">充值记录</a>
+                </li>
+                <li>
+                    <a ng-href="#/recentQuestion">最近问题</a>
+                </li>
+                <li>
+                    <a ng-href="#/historyRecord">历史积分</a>
+                </li>
+                <li>
+                    <a ng-href="#/personProfile">个人设置</a>
+                </li>
+                <li>
+                    <a ng-href="#/index">退出</a>
+                </li>
+            </ul>
+        </div>
+        <div class="span11 offset1">
+            <div class="row">
+                <div class="row">
+                    <form class="form-inline">
+                        <label class="control-label">单卡面值</label>
+                        <input type="text" class="span2" ng-model="cardPrice"/>
+                        <label class="control-label offset1">张数</label>
+                        <input type="text" class="span1" ng-model="cardAmount"/>
+                        <input type="button" ng-click="generateCard()" value="生成卡号"/>
+                        <label class="control-label offset1">你目前总积分:{{questionCredits||""}}</label>
+                    </form>
+                </div>
+                <div class="row">
+                    <form class="form-inline">
+                        <label class="control-label">是否已用</label>
+                        <select ng-model="searcher.Auditing" class="span2">
+                        <option value=""></option>
+                        <option value="true">已用</option>
+                        <option value="false">未用</option>
+                    </select>
+                        <input type="button" ng-click="search()" value="搜索"/>
+                    </form>
+                    <p style="float:right;line-height:25px;font-size: 12px;margin-right:100px">共{{recordSize}}条记录</p>
+
+                </div>
+            </div>
+            <div class="row" style="font-size:12px">
+                <!--题目类型 -->
+                <table class="table table-condense">
+                    <thead>
+                    <tr>
+                        <th>生成时间</th>
+                        <th>卡面值</th>
+                        <th>充值时间</th>
+                        <th>积分</th>
+                        <th>充值用户</th>
+                        <th>卡号</th>
+                    </tr>
+                    </thead>
+                    <tbody ng-repeat="record in records">
+                    <tr>
+                        <td>{{record.AddTime|date:'yyyy/MM/dd HH:mm'}}</td>
+                        <td>{{record.CardPrice}}</td>
+                        <td>{{(record.CardTime||"")|date:'yyyy/MM/dd HH:mm'}}</td>
+                        <td>{{record.CardPrice*1000}}</td>
+                        <td>{{record.CardUser}}</td>
+                        <td>{{record.CardNo}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <ul>
+                        <li ng-show="page.pre"><a href="javascript:void(0)" ng-click="pageTo(-1)">Prev</a></li>
+                        <li ng-show="page.one" ng-class="{active:page.oneS}"><a href="javascript:void(0)" ng-click="pageTo(page.one)">{{page.one}}</a></li>
+                        <li ng-show="page.two" ng-class="{active:page.twoS}"><a href="javascript:void(0)" ng-click="pageTo(page.two)">{{page.two}}</a></li>
+                        <li ng-show="page.thr" ng-class="{active:page.thrS}"><a href="javascript:void(0)" ng-click="pageTo(page.thr)">{{page.thr}}</a></li>
+                        <li ng-show="page.fou" ng-class="{active:page.fouS}"><a href="javascript:void(0)" ng-click="pageTo(page.fou)">{{page.fou}}</a></li>
+                        <li ng-show="page.fiv" ng-class="{active:page.fivS}"><a href="javascript:void(0)" ng-click="pageTo(page.fiv)">{{page.fiv}}</a></li>
+                        <li ng-show="page.nex"><a href="javascript:void(0)"  ng-click="pageTo(0)">Next</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

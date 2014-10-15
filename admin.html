@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Admin管理员</title>
+    <script type="text/javascript">
+        function ajax(postString,cb){
+            var xhr = new XMLHttpRequest();
+            var fd = new FormData();
+            fd.append("postString", postString);
+            fd.append("postSource","admin");
+            xhr.onreadystatechange = function(code,text){
+                if(xhr.status==200&&xhr.readyState==4){
+                    if(cb){
+                        cb(xhr.responseText);
+                    }
+                }
+            }
+            xhr.open("POST", "http://localhost:8080/ansayServer.aspx");
+            xhr.send(fd);
+        }
+
+        function GenerateCard(){
+            var price = getId("txt_cardPrice").value;
+            if(price&&!isNaN(price)){
+                var postString = "GenerateCard;Price="+price;
+                var lbl = getId("lbl_requesting");
+                lbl.textContent="";
+                ajax(postString,function(res){
+                    lbl.textContent=res;
+                    getId("txt_cardPrice").value = "";
+                })
+            }
+        }
+
+        function getId(id){
+            return document.getElementById(id);
+        }
+    </script>
+</head>
+<body>
+<div style="padding:5px">
+    <div style="padding:5px;margin-bottom:20px">
+        <fieldset style="padding:5px">
+            <legend>请求生成充值卡</legend>
+            <label>卡面值</label><input type="text" widh="100px" id="txt_cardPrice"/>
+            <input type="button" onclick="GenerateCard()" value="GenerateCard"/><label id="lbl_requesting" style="color:red;font-size:12px;"></label><br/>
+        </fieldset>
+    </div>
+    <hr/>
+</div>
+</body>
+</html>

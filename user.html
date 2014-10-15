@@ -1,0 +1,207 @@
+﻿<html>
+<header>
+    <title>Ansay 答题者模拟请求</title>
+    <script type="text/javascript">
+
+        function showRequsting(){
+            var display  = getId("lbl_requesting");
+            display.style.display="";
+            getId("img_quest").style.display="none";
+        }
+
+        function hideRequesting(){
+            var display  = getId("lbl_requesting");
+            display.style.display="none"
+            getId("img_quest").style.display="";
+        }
+
+        function getId(id){
+            return document.getElementById(id);
+        }
+
+        var startFlag = false;
+
+        function start(){
+            if(!startFlag) {
+                startFlag = true;
+                post();
+            }
+        }
+
+        function post(){
+            showRequsting();
+            var xhr = new XMLHttpRequest();
+            //var counter = 0;
+            var fd = new FormData();
+            fd.append("postString", "GetQuestion;账号=mmchjl;密码=ansay0246810;题型=30001;文件=c:\\1.jpg;超时秒数=60;QuestionId={72E22CBB-C9D8-4522-B321-5C53CA5FBB33};ImageMd5=2724806E1C2E1BCFFC554818B6BF46E0;dllId={FDF9B0D4-D7C1-4535-ADBC-56C4E6F061CE};FileVersion=14.1.115.2130;MAC=00-23-AE-8B-B4-2F;_opType=SendFile;_操作类型=SendFile");
+            fd.append("postSource","gansay.exe");
+            xhr.onreadystatechange = function(code,text){
+                if(xhr.status==200&&xhr.readyState==4){
+                    console.log("Finish");
+                    console.log("The result is :"+xhr.responseText);
+                    hideRequesting();
+                    adapt(xhr.responseText);
+                }
+            }
+            xhr.open("POST", "http://localhost:8080/ansayServer.aspx");
+            xhr.send(fd);
+        }
+        var interval = null;
+        var currentQuestionNo = "";
+        function adapt(questionObj){
+            var quest = null;
+            try{
+                quest = JSON.parse(questionObj);
+                clearInterval(interval);
+                currentQuestionNo = quest.QuestionNO;
+                var url = "./file/getimg?imgid=" + quest.imgId;
+                getId("img_quest").style.display="";
+                getId("img_quest").src = url;
+                getId("txt_gItemType").textContent = quest.gItemNo;
+                var temp = (new Date().getTime() - quest.QuestionDate)/1000;
+                getId("lbl_questPostTime").textContent = temp+" 秒前";
+                getId("lbl_questLeftTime").textContent=quest.TimeOut - Math.ceil(temp)+" 秒";
+                interval = setInterval(count,1000)
+            }catch (e){
+                currentQuestionNo="";
+                getId("img_quest").style.display="none";
+                getId("txt_gItemType").textContent = "目前没有题目";
+                clearInterval(interval);
+                getId("lbl_questPostTime").textContent = "";
+                getId("lbl_questLeftTime").textContent="";
+                if(startFlag) {
+                    setTimeout(post, 1000)
+                }
+            }
+        }
+
+        function count(){
+            var leftTime = parseInt(getId("lbl_questLeftTime").textContent);
+            if(leftTime&&leftTime>0){
+                leftTime--;
+            }else{
+                clearInterval(interval)
+            }
+            getId("lbl_questLeftTime").textContent = leftTime +" 秒";
+        }
+        String.prototype.Trim = function() { return this.replace(/(^\s*)|(\s*$)|(\n)/g, ""); };
+        function postAnswer(){
+            var answerTxt = getId("txt_answer").value.Trim();
+            if(currentQuestionNo&&answerTxt){
+                //showRequsting();
+                var xhr = new XMLHttpRequest();
+                //var counter = 0;
+                var fd = new FormData();
+                var str = "PostAnswer;answererId=answer;QuestionNO="+currentQuestionNo+";answerTxt="+answerTxt+";"
+                fd.append("postString", str);
+                fd.append("postSource","gansay.exe");
+                xhr.onreadystatechange = function(code,text){
+                    if(xhr.status==200&&xhr.readyState==4){
+                        console.log("Finish");
+                        console.log("The result is :"+xhr.responseText);
+                        clearAndFeedBack(xhr.responseText);
+                    }
+                }
+                xhr.open("POST", "http://localhost:8080/ansayServer.aspx");
+                xhr.send(fd);
+            }else{
+                alert("没有可回答的题目或者答案为空")
+            }
+        }
+
+        function clearAndFeedBack(result){
+            clearInterval(interval);
+            getId("txt_gItemType").textContent="";
+            getId("lbl_questPostTime").textContent="";
+            getId("lbl_questLeftTime").textContent="";
+            getId("txt_answer").value="";
+            getId("img_quest").style.display="none";
+            if(startFlag){
+                post();
+            }
+        }
+
+        function Stop(){
+            startFlag = false;
+        }
+
+        function login(){
+            var postString =createPostString("userLoginByA",{
+                UserId:getId("txt_account").value,
+                Password:getId("txt_pwd").value
+            });
+            ajax(postString,function(res){
+                getId("lbl_login").textContent=res;
+            })
+        }
+
+        function ajax(postString,cb){
+            var xhr = new XMLHttpRequest();
+            var fd = new FormData();
+            fd.append("postString", postString);
+            fd.append("postSource","admin");
+            xhr.onreadystatechange = function(code,text){
+                if(xhr.status==200&&xhr.readyState==4){
+                    if(cb){
+                        cb(xhr.responseText);
+                    }
+                }
+            }
+            xhr.open("POST", "http://localhost:8080/ansayServer.aspx");
+            xhr.send(fd);
+        }
+
+        function createPostString(instruction,keyvalueObj){
+            if(instruction){
+                var result = instruction+";";
+                keyvalueObj = keyvalueObj||{};
+                var keys = Object.keys(keyvalueObj)
+                keys.forEach(function(key){
+                    result+=key+"="+keyvalueObj[key]+";";
+                })
+                return result;
+            }
+            return "";
+        }
+    </script>
+    <style>
+
+        span{
+            width:100px;
+            text-align:left;
+            display: inline-block;
+        }
+    </style>
+</header>
+<body>
+<div style="padding:5px">
+    <div style="padding:5px;margin-bottom:20px">
+        <fieldset style="padding:5px">
+            <legend>登录</legend>
+            <label for="">帐号</label><input type="text" id="txt_account" width="100px"/><br/>
+            <label for="">密码</label><input type="text" id="txt_pwd" width="100px"/><br/><label id="lbl_login"></label><br/>
+            <input type="button" value="登录" width="100px" onclick="login()"/>
+        </fieldset>
+    </div>
+    <div style="padding:5px;margin-bottom:20px">
+        <fieldset style="padding:5px">
+            <legend>请求题目</legend>
+            <input type="button" onclick="start()" value="GetQuestion"/><label id="lbl_requesting" style="color:red;font-size:12px;display:none">请求处理中......</label><br/>
+            <input type="button" onclick="Stop()" value="StopGetQuestion"/><br/>
+        </fieldset>
+    </div>
+    <hr/>
+    <div>
+        <fieldset style="padding:5px">
+            <legend>返回结果</legend>
+            <label>返回题型:</label><label id="txt_gItemType"></label><br/>
+            <label>问题时间:</label><label id="lbl_questPostTime"></label><br/>
+            <label>剩余时间:</label><label id="lbl_questLeftTime"></label><br/>
+            <label>输入答案:</label><input type="text" id="txt_answer" width="100"/> <input type="button" value="提交答案" width="100px" id="btn_uploadAnswer" onclick="postAnswer()"/><br/>
+            <label>返回图片:</label><br/><img id="img_quest" src="" style="display:none" width="400px"/><br/>
+
+        </fieldset>
+    </div>
+</div>
+</body>
+</html>

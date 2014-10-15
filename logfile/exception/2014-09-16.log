@@ -1,0 +1,54 @@
+Time:2014-09-16 23:30:55
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:170:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-16 23:32:55
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:170:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-16 23:34:40
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:170:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-16 23:34:55
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:170:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-16 23:36:40
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:170:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
+Time:2014-09-16 23:36:55
+TypeError: Cannot read property 'QuestionDate' of null
+    at F:\answer\lib\answer.js:170:56
+    at F:\answer\lib\dataAdapter.js:145:9
+    at F:\answer\lib\dataAdapter.js:140:17
+    at fn (F:\answer\node_modules\async\lib\async.js:517:34)
+    at F:\answer\node_modules\async\lib\async.js:441:34
+    at process._tickCallback (node.js:415:13)
+
